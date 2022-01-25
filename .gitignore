@@ -1,3 +1,4 @@
 .idea/
 test.db
 config_blog.json
+__pycache__/
