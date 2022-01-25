@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+    <header class="masthead" style="background-image: url(https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHw%3D&w=1000&q=80)">
+      <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_name']}}</h1>
+                            <span class="subheading">{{params['tag_line']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Signin to Ayaan's Blog</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="signin.css" rel="stylesheet">
+  </head>
+<style type="text/css">
+  form {
+
+    padding-top: 2.0%;
+    padding-left: 40%;
+    padding-right:40%;
+    text-align: center;
+    
+
+}
+
+</style>
+  <body class="text-center">
+ 
+    <form class="form-signin" action="/dashboard" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
+      <label for="uname" class="sr-only">Username</label>
+      <input type="text" id="uname" name = "uname" class="form-control" placeholder="Username" required autofocus>
+      <label for="upass" class="sr-only">Password</label>
+      <input type="password" id="upass" name = "upass" class="form-control" placeholder="Password" required autofocus>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© {{params['blog_name'] }} 2022</p>
+    </form>
+
+
+ </body>
+</html>
+    
+  </body>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url(https://images.squarespace-cdn.com/content/v1/5ceafa407824f80001793b84/1603156204939-UKS73XG6EHG95BOBP3DY/writing-blog.jpg?format=1000w)">
+      <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_name']}}</h1>
+                            <span class="subheading">{{params['tag_line']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        
+    <style>
+        .tab {
+            display: inline-block;
+            margin-left: 1105px;
+        }
+        .smalltab{
+          isplay: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+          <h3 align="center">Welcome to the Admin Panel</h3>
+          <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" name="file1"><button class="btn btn-primary">Submit</button>
+          </form><br>
+          <span class="smalltab"></span><a href="/edit/new-post"><button class="btn btn-primary"> Add New Post</button></a>
+
+          <span class="tab"></span><a href="/logout"><button class="btn btn-primary" >Logout</button></a>
+          <br>
+          <table class="table" align="center">
+  <thead>
+    <tr>
+      <th scope="col">sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  {% for post in posts%}
+      <tbody>
+        <tr>
+          <td>{{post.sno}}</td>
+          <td>{{post.title}}</td>
+          <td>{{post.date}}</td>
+          <td><a href="/edit/{{post.sno}}"><button class="btn btn-primary">Edit</button></a></td>
+          <td><a href="/delete/{{post.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    {% endblock %}

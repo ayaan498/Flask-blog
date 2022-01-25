@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+web: gunicorn app:app
+=======
+web: gunicorn app:app
+>>>>>>> 818bac0a307c25ed3398e76d7096c53792164444

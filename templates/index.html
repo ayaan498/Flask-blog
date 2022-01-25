@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url(https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHw%3D&w=1000&q=80)">
+      <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_name']}}</h1>
+                            <span class="subheading">{{params['tag_line']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <style>
+        .tab {
+            display: inline-block;
+            margin-left: 600px;
+        }
+        .smalltab {
+            display: inline-block;
+            margin-left: 330px;
+        }
+    </style>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+
+     <!-- Todo: Fetch it using for loop from the database -->
+
+     {% for post in posts.items %}    
+          <div class="post-preview">
+            <a href="/post/{{post.slug}}">
+              <h2 class="post-title">{{ post.title }}
+
+              </h2>
+              <h3 class="post-subtitle">
+                {{post.tag_line}}
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="/">{{post.name}}</a>
+              on {{post.date}}</p>
+          </div>
+
+          {{post.content[0:143]}}...
+          <hr>
+</li></a>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+    <div class="clearfix">
+    <span class="smalltab"></span><a class="btn btn-primary" href="{{prev}}">&larr;Previous</a>
+    <span class="tab"><a class="btn btn-primary" href="{{next}}">Next&rarr;</a>
+  </div>
+    {% endblock %}
+    
