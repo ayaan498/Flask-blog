@@ -7,7 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 from werkzeug.utils import secure_filename
 import json
-import os
 from datetime import datetime
 
 with open('config_blog.json', 'r') as c:
@@ -169,13 +168,13 @@ def delete(sno):
         return redirect('/dashboard')
 
 
-@app.route('/uploader', methods=['GET', 'POST'])        # for uploading files in given directory
-def uploader():
-    if "user" in session and session['user'] == params['admin_user']:
-        if request.method == "POST":
-            f = request.files['file1']      # request to access the file uploaded on variable 'file1'
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))          # saving file at given file location
-            return 'Uploaded Successfully'
+# @app.route('/uploader', methods=['GET', 'POST'])        # for uploading files in given directory
+# def uploader():
+#     if "user" in session and session['user'] == params['admin_user']:
+#         if request.method == "POST":
+#             f = request.files['file1']      # request to access the file uploaded on variable 'file1'
+#             f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))          # saving file at given file location
+#             return 'Uploaded Successfully'
 
 
 app.run()       # running the flask web app
