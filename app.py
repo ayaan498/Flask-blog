@@ -176,5 +176,5 @@ def delete(sno):
 #             f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))          # saving file at given file location
 #             return 'Uploaded Successfully'
 
-
-app.run()       # running the flask web app
+if __name__ == '__main__':
+    app.run()       # running the flask web app
