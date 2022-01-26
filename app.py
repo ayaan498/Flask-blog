@@ -13,7 +13,6 @@ with open('config_blog.json', 'r') as c:
 
 app = Flask(__name__)
 app.secret_key = 'super-secret-key'         # setting secret-key for login
-app.config['UPLOAD_FOLDER'] = params['upload_location']         # setting file-upload location
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',           # setting all parameters for mail service
     MAIL_PORT='465',
