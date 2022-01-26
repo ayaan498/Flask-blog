@@ -2,7 +2,6 @@ blinker==1.4
 cryptography==36.0.1
 greenlet==1.1.2
 gunicorn==20.1.0
-urllib3==1.26.8
 absl-py==0.13.0
 anyio==3.5.0
 argon2-cffi==21.1.0
