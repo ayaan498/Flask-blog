@@ -1,6 +1,5 @@
 # This is a blog website created by Ayaan Gani
 # Various functions of Flask micro-framework have been used
-
 import math
 from flask import Flask, render_template, request, session, redirect
 from flask_sqlalchemy import SQLAlchemy
