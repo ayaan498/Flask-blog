@@ -1,0 +1,18 @@
+{
+    "params":
+    {
+      "local_server": "True",
+      "local_uri": "sqlite:///test.db",
+      "prod_uri": "sqlite:///test.db",
+      "lk_url": "https://www.linkedin.com/in/ayaan-gani-15ab1b21b/",
+      "git_url": "https://github.com/ayaan498",
+      "blog_name": "Ayaan Gani",
+      "tag_line": "The Coding Junkie!",
+      "gmail_user": "ayaanpg2@gmail.com",
+      "gmail_pswd": "Ayaan2@$<123>",
+      "no_of_posts": 2,
+      "admin_user":"ayaan498",
+      "admin_password": "apg",
+      "upload_location": "C:\\Users\\ayaan\\PycharmProjects\\Project_1\\Uploads"
+    }
+  }
